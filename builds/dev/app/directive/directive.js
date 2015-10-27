@@ -20,7 +20,8 @@
 			//templateUrl: 'app/directive/index.html',
 			//scope: false, //true // {}
 			scope: {
-				titleTemplate: '@template'
+				//titleTemplate: '@template'
+				dataBind: '=title'
 			},
 			templateUrl: function(tElem, tAttrs){
 				console.log(tAttrs);
@@ -28,8 +29,11 @@
 					? 'app/directive/index.html'
 					: 'app/directive/index2.html';
 			},
+			controller: function($scope){
+				$scope.inputText = $scope.titleTemplate;
+			},
 			link: function(scope, elem, attrs){
-				console.log('titleTemplate', scope.titleTemplate);
+				//console.log('titleTemplate', scope.titleTemplate);
 				console.log(scope);
 				scope.title = attrs.title;
 				scope.body = attrs.inputText;

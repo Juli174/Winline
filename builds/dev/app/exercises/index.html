@@ -21,7 +21,8 @@
 <br/>
 <!-- <pre>{{newExerciseForm | json}}</pre> -->
 <!-- <pre>{{esc.list | json}}</pre> -->
-<pagination total-items="esc.list.length" ng-model="esc.currentPage" ng-change="esc.pageChanged()"></pagination>
+<!-- <pagination total-items="esc.list.length" ng-model="esc.currentPage" ng-change="esc.pageChanged()"></pagination> -->
+
 <table class="table">
 	<thead>
 		<tr>
@@ -32,7 +33,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="exercise in esc.list">
+		<tr ng-repeat="exercise in esc.list | orderBy: 'name'">
 			<td ng-bind="$index+1"></td>
 			<td ng-bind="exercise.name"></td>
 			<td ng-bind="exercise.difficulty_level"></td>

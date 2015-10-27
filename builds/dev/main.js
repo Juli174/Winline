@@ -5,9 +5,14 @@
 		'ui.router',
 		'Fitness.Fire',
 		'Fitness.Exercises',
-		'Fitness.Directive'
+		'Fitness.Singletone',
+		'Fitness.Directive',
 		])
 	.constant('FIREBASE_URL', 'https://yuliyafitnesstracker.firebaseapp.com')
+	.value('configOptions', {
+		lang: 'ru',
+		timezone: '+3'
+	})
 	.config(Config)
 
 	//@ngInject
